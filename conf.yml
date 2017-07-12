@@ -1,0 +1,47 @@
+--- 
+dbConfig: 
+  driver: org.h2.Driver
+  password: sa
+  url: "jdbc:h2:~/example"
+  username: sa
+logging: 
+  appenders: 
+    - 
+      type: console
+    - 
+      archivedFileCount: 7
+      archivedLogFilenamePattern: "/tmp/application-%d{yyyy-MM-dd}-%i.log.gz"
+      currentLogFilename: /tmp/application.log
+      logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
+      maxFileSize: 10MB
+      threshold: INFO
+      timeZone: UTC
+      type: file
+  level: INFO
+  loggers: 
+    com.example.app: DEBUG
+    org.hibernate.SQL: 
+      level: DEBUG
+server: 
+  adminConnectors: 
+    - 
+      port: 18081
+      type: http
+    - 
+      keyStorePassword: changeit
+      keyStorePath: KeyStore.jks
+      port: 8444
+      type: https
+      validateCerts: false
+      validatePeers: false
+  applicationConnectors: 
+    - 
+      port: 18080
+      type: http
+    - 
+      keyStorePassword: changeit
+      keyStorePath: KeyStore.jks
+      port: 8443
+      type: https
+      validateCerts: false
+      validatePeers: false
