@@ -1,4 +1,4 @@
-package com.example.resources;
+/*package com.example.resources;
 
 import com.example.core.Person;
 import com.example.core.PersonTests;
@@ -23,9 +23,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.*;
 
-/**
+*//**
  * Tests {@link io.dropwizard.testing.junit.ResourceTestRule}
- */
+ *//*
 public class PersonResourceTests {
 
     private static final PersonDAO personDAO = mock(PersonDAO.class);
@@ -120,3 +120,4 @@ public class PersonResourceTests {
         verify(personDAO, times(1)).deleteById(1);
     }
 }
+*/
